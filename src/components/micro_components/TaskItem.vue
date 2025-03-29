@@ -13,7 +13,6 @@
         <p><strong> {{ task.title }} </strong></p>
         <p> {{ task.text }} </p>
         <p class="task_date">  {{ task.date_start }}  </p>
-
     </div>
 </template>
 
