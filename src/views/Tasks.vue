@@ -12,7 +12,7 @@
     components: { TasksList, TasksForm },
     data() {
       return {
-        tasks: [], // Изначально пустой массив
+        tasks: [],
         lastTaskId: Number(localStorage.getItem('lastTaskId')) || 0, // Берем из localStorage или 0
       };
     },
