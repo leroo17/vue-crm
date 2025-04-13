@@ -1,7 +1,7 @@
 <template>
     <p>Tasks</p>
     <TasksForm :tasks="tasks" @create="addTask"></TasksForm>
-    <TasksList :tasks="tasks"></TasksList>
+    <TasksList :tasks="tasks" @remove="removeTask" @setDone="setDone"></TasksList>
   </template>
   
   <script>
@@ -45,6 +45,19 @@
       },
       saveTasks() {
         localStorage.setItem('tasks', JSON.stringify(this.tasks)); // Сохраняем весь массив
+      },
+      removeTask(task) {
+        this.tasks = this.tasks.filter(el => el.id !== task.id);
+        this.saveTasks();
+      },
+      setDone(task) {
+        // task.status = task.status === 0 ? 1 : 0;
+        if(task.status === 0) {
+          task.status = 1
+        } else {
+          task.status = 0
+        }
+        this.saveTasks();
       }
     }
   };

@@ -8,13 +8,13 @@
             placeholder="Заголовок"
         ></input_app> -->
         <input_app 
-            v-model="task.title"
+            v-model:value="task.title"
             type="text"
             placeholder="Заголовок"
         ></input_app>
         <!-- второй инпут с v-model -->
         <input_app 
-            v-model="task.text"
+            v-model:value="task.text"
             type="text"
             placeholder="Текст"
         ></input_app>

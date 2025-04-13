@@ -1,13 +1,13 @@
 <template>
-    <div class="task">
+    <div class="task" :class="{ done: task.status === 1 }">
         <div class="task_btns">
-            <task_btn class="task_btn_remove">
-                <span></span>
-                <span></span>
+            <task_btn class="task_btn_remove" @click="$emit('remove', task)" >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </task_btn>
-            <task_btn class="task_btn_done">
-                <span></span>
-                <span></span>
+            <task_btn class="task_btn_done" @click="$emit('setDone', task)">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </task_btn>
         </div>
         <p><strong> {{ task.title }} </strong></p>
@@ -17,10 +17,9 @@
 </template>
 
 <script>
-    import Btn from "@/components/UI/Btn.vue"
     export default {
         props: {
-            task: {
+            task: { 
               type: Object,
               required: true  
             }
@@ -82,5 +81,11 @@
     }
     .task_btn_done>span:nth-child(2) {
         transform: rotate(-45deg) translateY(-0.5px);
+    }
+    
+    .task.done {
+        background-color: #4caf50;
+        text-decoration: line-through;
+        opacity: 0.8;
     }
 </style>    
