@@ -1,5 +1,5 @@
 <template>
-    <div class="tasks_list">
+    <div class="tasks_list" v-if="tasks.length>0">
         <!-- Вывод задач циклом -->
         <!-- <div class="task" v-for="task in tasks">
             <p><strong> {{ task.title }} </strong></p>
@@ -18,6 +18,9 @@
                 <TaskItem v-for="task in getTasksDone" :task="task" :key="task.id" @remove="$emit('remove', task)" @setDone="$emit('setDone', task)"></TaskItem>
             </div>
         </div>
+    </div>
+    <div v-else>
+        <h3>Задач нет</h3>
     </div>
 </template>
 <script>

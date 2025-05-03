@@ -1,10 +1,12 @@
 <template>
-    <input :value="value" class="input_app" @input="updateInput"></input>
+    <input :value="value" type="text" class="input_app" @input="updateInput">
+        <slot></slot>
+    </input>
 </template>
 
 <script>
     export default {
-        name: 'input_app',
+        name: 'InputApp',
         props: {
             value: [String, Number]
         },
@@ -19,7 +21,6 @@
 <style>
     .input_app {
         padding: 5px;
-        max-width: 40%;
         outline: none;
     }
 </style>    

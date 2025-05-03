@@ -9,13 +9,11 @@
         ></input_app> -->
         <input_app 
             v-model:value="task.title"
-            type="text"
             placeholder="Заголовок"
         ></input_app>
         <!-- второй инпут с v-model -->
         <input_app 
             v-model:value="task.text"
-            type="text"
             placeholder="Текст"
         ></input_app>
         <button class="task_add_btn" @click.prevent="addTask">Добавить</button>

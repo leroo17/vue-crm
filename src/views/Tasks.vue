@@ -28,6 +28,8 @@
             ];
             this.saveTasks();
         }
+        console.log(this.tasks);
+        
 
         // Если lastTaskId не был сохранен, устанавливаем его по максимальному ID
         if (!this.lastTaskId) {
