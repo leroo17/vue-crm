@@ -21,5 +21,6 @@
         border: 1px solid #fff;
         cursor: pointer;
         border-radius: 5px;
+        position: relative;
     }
 </style>    

@@ -1,16 +1,18 @@
 <template>
-    <input :value="modelValue" class="input_app" @input="updateInput"></input>
+    <input :value="value" type="text" class="input_app" @input="updateInput">
+        <slot></slot>
+    </input>
 </template>
 
 <script>
     export default {
-        name: 'input_app',
+        name: 'InputApp',
         props: {
-            modelValue: [String, Number]
+            value: [String, Number]
         },
         methods: {
             updateInput(event) {
-                this.$emit('update:modelValue', event.target.value)
+                this.$emit('update:value', event.target.value)
             }
         }
     }
@@ -19,7 +21,6 @@
 <style>
     .input_app {
         padding: 5px;
-        max-width: 40%;
         outline: none;
     }
 </style>    
